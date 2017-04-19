@@ -7,4 +7,6 @@ public interface Model {
     ModelData getModelData();
     void loadUsers();
     public void loadDeletedUsers();
+    public void loadUserById(long userId);
+
 }
