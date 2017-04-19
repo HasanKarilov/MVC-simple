@@ -25,6 +25,12 @@ public class Controller {
         usersView.refresh(model.getModelData());
     }
 
+    public void onShowAllDeletedUsers() {
+        model.loadDeletedUsers();
+        // Не забудь, что данные, полученные с сервера, необходимо положить в ModelData.(in MainModel.java { modelData.setUsers(users)})
+        // А потом обновить view.
+        usersView.refresh(model.getModelData());
+    }
     public void setUsersView(UsersView usersView) {
         this.usersView = usersView;
     }
