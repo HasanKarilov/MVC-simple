@@ -16,6 +16,13 @@ public class Controller {
         this.model = model;
     }
 
+    public void setUsersView(UsersView usersView) {
+        this.usersView = usersView;
+    }
+
+    public void setEditUserView(EditUserView editUserView) {
+        this.editUserView = editUserView;
+    }
     /**
      * method должен обратиться к модели и инициировать загрузку пользователей. Далее обновляет представление UsersView
      */
@@ -38,11 +45,8 @@ public class Controller {
         editUserView.refresh(model.getModelData());
     }
 
-    public void setUsersView(UsersView usersView) {
-        this.usersView = usersView;
-    }
-
-    public void setEditUserView(EditUserView editUserView) {
-        this.editUserView = editUserView;
+    public void onUserDelete(long id){
+        model.deleteUserById(id);
+        usersView.refresh(model.getModelData());
     }
 }
